@@ -14,7 +14,7 @@ class GreetingController(var userRepository: UserRepository) {
     val counter = AtomicLong()
 
     @GetMapping("/greeting")
-    fun greeting(@RequestParam(value = "name", defaultValue = "World") name: String) = userRepository.findAll()
+    fun greeting(@RequestParam(value = "id", defaultValue = "5") id: Long) = userRepository.findById(id)
 
     @PostMapping("/addGreeting")
     fun addGreeting(@Valid @RequestBody greeting: Greeting) =  userRepository.save(greeting)

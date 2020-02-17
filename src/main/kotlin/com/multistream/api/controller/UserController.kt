@@ -11,12 +11,6 @@ import javax.validation.Valid
 @RestController
 class UserController {
     val counter = AtomicLong()
-    @GetMapping("/user")
-    fun user(@RequestParam(value = "name", defaultValue = "World") name: String) = Greeting(counter.incrementAndGet(), "Hello, $name ")
-
-    @PostMapping("/user/{id}")
-
-    fun postUser(user: User) = Greeting(counter.incrementAndGet(), "Hello, ")
 
     @GetMapping("/")
     fun blog(model: Model)  = "FCJ"

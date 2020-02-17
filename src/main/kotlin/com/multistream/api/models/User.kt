@@ -1,4 +1,8 @@
 package com.multistream.api.models
 
-data class User(val id: Long, val userName: String, val password: String) {
+import javax.persistence.Entity
+import javax.persistence.Id
+
+@Entity
+data class User(@Id val id: Long, val userName: String, val password: String) {
 }
