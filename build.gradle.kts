@@ -28,6 +28,7 @@ dependencies {
 	runtimeOnly("org.springframework.boot:spring-boot-devtools")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation ("org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE")
 
 }
 
