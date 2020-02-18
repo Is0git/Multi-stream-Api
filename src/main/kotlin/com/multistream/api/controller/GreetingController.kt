@@ -17,8 +17,8 @@ class GreetingController(var greetingRepository: GreetingRepository, val userRep
     @GetMapping("/greeting")
     fun greeting(@RequestParam(value = "id", defaultValue = "5") id: Long) = greetingRepository.findById(1)
 
-    @GetMapping("/user")
-    fun user(@RequestParam(value = "id", defaultValue = "5") id: Long) = userRepository.findById(1)
+    @GetMapping("/user/{id}")
+    fun user(@RequestParam(value = "id", defaultValue = "5") id: Long, @PathVariable("id") path: Long) = userRepository.findById(path)
 
     @PostMapping("/addGreeting")
     fun addGreeting(@Valid @RequestBody greeting: Greeting) =  greetingRepository.save(greeting)
