@@ -10,11 +10,5 @@ import javax.sql.DataSource
 
 @Configuration
 class DatasourceConfig {
-    @Bean
-    fun greeting() : Greeting {
-    return    Greeting(1, "sdsd", User(5, "TEST", "TEST2"))
-    }
 
-    @Bean
-    fun user() : User = User(0, "name,", "SOS")
 }
