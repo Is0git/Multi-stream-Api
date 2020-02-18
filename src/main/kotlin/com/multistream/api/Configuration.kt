@@ -12,7 +12,7 @@ import javax.sql.DataSource
 class DatasourceConfig {
     @Bean
     fun greeting() : Greeting {
-    return    Greeting(1, "sdsd")
+    return    Greeting(1, "sdsd", User(5, "TEST", "TEST2"))
     }
 
     @Bean
