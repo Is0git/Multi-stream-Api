@@ -7,5 +7,5 @@ import javax.persistence.Id
 import javax.persistence.OneToOne
 
 @Entity
-data class User(@Id @Column(unique = true) val id: Long, val userName: String, val password: String, @OneToOne(mappedBy = "user")  @JsonIgnoreProperties("user") var greeting: Greeting? = null) {
+data class User(@Id @Column(unique = true) val id: Long, val userName: String, val password: String) {
 }

@@ -12,8 +12,7 @@ class ResourceServer : ResourceServerConfigurerAdapter() {
     override fun configure(http: HttpSecurity?) {
         http
                 ?.authorizeRequests()
-                ?.antMatchers("/greeting")?.fullyAuthenticated()
-                ?.antMatchers("/")?.permitAll()
-
+                ?.antMatchers("/api/**")?.authenticated()
+                ?.antMatchers("/")?.permitAll();
     }
 }

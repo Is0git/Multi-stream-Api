@@ -22,15 +22,10 @@ class WebAuthorizationConfig : WebSecurityConfigurerAdapter() {
     lateinit var passwordEncoder: BCryptPasswordEncoder
     override fun configure(http: HttpSecurity?) {
        http
-               ?.antMatcher("/**")
-               ?.authorizeRequests()
-               ?.antMatchers("/oauth/authorize**", "/login**", "/error**")
-               ?.permitAll()
-               ?.and()
                ?.authorizeRequests()
                ?.anyRequest()?.authenticated()
                ?.and()
-               ?.formLogin()?.permitAll()
+               ?.formLogin()?.permitAll();
     }
 
 
