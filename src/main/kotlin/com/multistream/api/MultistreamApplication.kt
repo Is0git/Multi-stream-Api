@@ -20,27 +20,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 
 @SpringBootApplication(exclude = [ErrorMvcAutoConfiguration::class])
 @EnableAuthorizationServer
-class MultiStreamApplication : AuthorizationServerConfigurer{
-    @Value("security.oauth2.client-id")
-    lateinit var clientId: String
-    @Value("security.oauth2.client-secret")
-    lateinit var secret: String
-
-
-    override fun configure(security: AuthorizationServerSecurityConfigurer?) {
-        security?.passwordEncoder(PasswordEncoderFactories.createDelegatingPasswordEncoder())
-    }
-
-    override fun configure(clients: ClientDetailsServiceConfigurer?) {
-       clients?.inMemory()?.withClient("first-client")?.secret("noonewilleverguess")
-    }
-
-    override fun configure(endpoints: AuthorizationServerEndpointsConfigurer?) {
-
-    }
-
-    @Bean
-    fun passwordEncoder() = BCryptPasswordEncoder()
+class MultiStreamApplication {
 
 }
 

@@ -29,6 +29,7 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation ("org.springframework.security.oauth:spring-security-oauth2:2.3.3.RELEASE")
+	implementation("org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:2.2.4.RELEASE")
 
 }
 
